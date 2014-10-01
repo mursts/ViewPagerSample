@@ -13,7 +13,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int i) {
-        return MyActivity.PlaceholderFragment.newInstance(i + 1);
+        return TabFragment.newInstance(i);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return "Tab " + position;
+        return "Tab " + (position + 1);
     }
 
 
