@@ -13,7 +13,12 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int i) {
-        return TabFragment.newInstance(i);
+        if (i < 2) {
+            return TabFragment.newInstance(i);
+        } else {
+            return ThirdFragment.newInstance();
+        }
+//        return TabFragment.newInstance(i);
     }
 
     @Override

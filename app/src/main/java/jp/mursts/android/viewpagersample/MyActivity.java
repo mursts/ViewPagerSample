@@ -9,9 +9,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
-public class MyActivity extends ActionBarActivity implements ActionBar.TabListener {
+public class MyActivity extends ActionBarActivity
+        implements ActionBar.TabListener, ThirdFragment.OnFragmentInteractionListener {
 
     private final static String TAG = MyActivity.class.getSimpleName();
 
@@ -108,4 +110,9 @@ public class MyActivity extends ActionBarActivity implements ActionBar.TabListen
         Log.d(TAG, "onTabReselected:" + tab.getPosition());
     }
 
+    @Override
+    public void onFragmentInteraction() {
+        Toast.makeText(this, "Tap third tab", Toast.LENGTH_LONG).show();
+        mViewPager.setCurrentItem(0);
+    }
 }
